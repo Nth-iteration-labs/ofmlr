@@ -16,6 +16,7 @@
 #' @param beta A kXp matrix with the true regression coefficients for each mixture component
 #' @param ak A vector of length k summing to 1 for the mixture probabilties
 #' @keywords generate logistic mixture
+#' @export
 #' @examples
 #' generate_mixture(100, 3, 2)
 #' generate_mixture(100, 2, 1)
@@ -61,6 +62,7 @@ generate_mixture <- function(
 #' Utility function to generate a probalbity vector of specific lenght
 #' @param k Number of components
 #' @return Vector of lenght \code{k} with random entries that sum to 1
+#' @export
 generate_probability_vector <- function(k){
 	p1 <- runif(k)
 	return(p1 / sum(p1))

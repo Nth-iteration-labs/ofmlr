@@ -5,7 +5,7 @@
 \title{Create an S4 object to fit the online logistic mixture model}
 \usage{
 online_log_mixture(p, k, beta = matrix(runif(k * p, -2, 2), nrow = k),
-  ak = generate_probability_vector(k), ll.window = 100, trace = FALSE)
+  ak = generate_probability_vector(k), ll.window = 1000, trace = FALSE)
 }
 \arguments{
 \item{p}{Number of predictors for each logistic regression model}

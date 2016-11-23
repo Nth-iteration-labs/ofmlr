@@ -139,7 +139,7 @@ setMethod(
 				"AIC"= m@descriptives$AIC, 
 				"BIC"= m@descriptives$BIC,
 				"Norm"= m@descriptives$dnorm,
-				"n"= m@params$n)
+				"n"= m@params$n-1)
 			data <- rbind(data, result)
 		}
 		print(data)	

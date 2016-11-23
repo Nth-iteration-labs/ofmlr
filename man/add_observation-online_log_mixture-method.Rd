@@ -5,7 +5,7 @@
 \alias{add_observation,online_log_mixture-method}
 \title{Method to add an observation to an online logistic regression model}
 \usage{
-\S4method{add_observation}{online_log_mixture}(object, y, X, lambda = 0.05)
+\S4method{add_observation}{online_log_mixture}(object, y, X, lambda = 0.1)
 }
 \arguments{
 \item{object}{An object of type online_log_mixture}

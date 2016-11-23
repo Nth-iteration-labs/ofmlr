@@ -124,7 +124,7 @@ setGeneric(
 setMethod(
 	f="add_observation",
 	signature = "online_log_mixture",
-	definition = function(object, y, X, lambda=.05){
+	definition = function(object, y, X, lambda=.1){
 		
 		#Check whether the length of the feature vector matches the current beta.:
 		if(length(X) != ncol(object@params$beta)){ 

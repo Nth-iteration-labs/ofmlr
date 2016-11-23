@@ -135,7 +135,7 @@ setMethod(
 				"k"= m@params$k, 
 				"p"= ncol(m@params$beta),
 				"ll"= m@descriptives$ll,
-				"maxll"= m@descriptives$ll,
+				"maxll"= m@descriptives$maxll,
 				"AIC"= m@descriptives$AIC, 
 				"BIC"= m@descriptives$BIC,
 				"Norm"= m@descriptives$dnorm,

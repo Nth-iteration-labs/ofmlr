@@ -88,7 +88,9 @@ online_log_mixture <- function(
 #' Add an observation
 #'	
 #' Generic for adding observations.
-#' @export
+#' @name add_observation
+#' @rdname add_observation-methods
+#' @exportMethod add_observation
 setGeneric(
 	name = "add_observation",
 	def = function(object, y, X, ...){standardGeneric("add_observation")})
@@ -120,7 +122,8 @@ setGeneric(
 #' M2
 #' 
 #' @return An updated object of type online_log_mixture
-#' @aliases add_observation, online_log_mixture
+#' @rdname add_observation-methods
+#' @aliases add_observation, ANY-method
 setMethod(
 	f="add_observation",
 	signature = "online_log_mixture",

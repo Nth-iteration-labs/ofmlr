@@ -226,6 +226,7 @@ ll_compute <- function(y, X, beta, ak=1, wk=1){
 #' the model parameters and a number of descriptives
 #' @param object The fitted model
 #' @return Nothing
+#' @export
 setMethod(
 	f="summary",
 	signature = "online_log_mixture",

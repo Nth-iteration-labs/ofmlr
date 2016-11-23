@@ -15,17 +15,17 @@ summaries of each individual model in the comparison.}
 }
 \value{
 Nothing
-
-examples
-M1 <- online_log_mixture(2,1)
-models <- multi_online_log_mixture(M1)
-models <- add_model(models, online_log_mixture(2,2))
-models <- add_observation(models, 1, c(2,-3))
-summary(models)
 }
 \description{
 Takes an object of type online_log_mixture and prints
 the model a comparison of the different models based on
 a number of different fit measures.
+}
+\examples{
+M1 <- online_log_mixture(2,1)
+models <- multi_online_log_mixture(M1)
+models <- add_model(models, online_log_mixture(2,2))
+models <- add_observation(models, 1, c(2,-3))
+summary(models)
 }
 

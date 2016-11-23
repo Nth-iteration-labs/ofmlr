@@ -14,3 +14,9 @@
 #' }
 #' plot(M1, params=TRUE)
 "_PACKAGE"
+
+
+
+# Simple update:
+# library(devtools)
+# document()

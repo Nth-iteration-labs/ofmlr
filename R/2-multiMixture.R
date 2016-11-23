@@ -109,12 +109,13 @@ setMethod(
 #' summaries of each individual model in the comparison.
 #' @return Nothing
 #'
-#' examples
+#' @examples
 #' M1 <- online_log_mixture(2,1)
 #' models <- multi_online_log_mixture(M1)
 #' models <- add_model(models, online_log_mixture(2,2))
 #' models <- add_observation(models, 1, c(2,-3))
 #' summary(models)
+#' @export
 #' 
 setMethod(
 	f="summary",

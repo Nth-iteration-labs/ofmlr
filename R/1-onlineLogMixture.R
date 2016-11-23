@@ -85,14 +85,13 @@ online_log_mixture <- function(
 }	
 
 
-
-# Create the generic if it does not yet exist:
-if(!isGeneric("add_observation")){
+#' Add an observation
+#'	
+#' Generic for adding observations.
+#' @export
 setGeneric(
 	name = "add_observation",
 	def = function(object, y, X, ...){standardGeneric("add_observation")})
-}
-
 
 
 #' Method to add an observation to an online logistic regression model
@@ -121,6 +120,7 @@ setGeneric(
 #' M2
 #' 
 #' @return An updated object of type online_log_mixture
+#' @aliases add_observation, online_log_mixture
 setMethod(
 	f="add_observation",
 	signature = "online_log_mixture",

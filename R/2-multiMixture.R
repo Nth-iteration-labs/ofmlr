@@ -86,6 +86,7 @@ setMethod(
 #' models <- add_model(models, online_log_mixture(2,2))
 #' models <- add_observation(models, 1, c(2,-3))
 #'
+#' @aliases add_observation, multi_online_log_mixture
 setMethod(
 	f="add_observation",
 	signature = "multi_online_log_mixture",

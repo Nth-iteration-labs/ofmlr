@@ -2,7 +2,9 @@
 % Please edit documentation in R/1-onlineLogMixture.R
 \docType{methods}
 \name{add_observation,online_log_mixture-method}
+\alias{add_observation,}
 \alias{add_observation,online_log_mixture-method}
+\alias{online_log_mixture}
 \title{Method to add an observation to an online logistic regression model}
 \usage{
 \S4method{add_observation}{online_log_mixture}(object, y, X, lambda = 0.1)

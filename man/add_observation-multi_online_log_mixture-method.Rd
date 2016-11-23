@@ -2,7 +2,9 @@
 % Please edit documentation in R/2-multiMixture.R
 \docType{methods}
 \name{add_observation,multi_online_log_mixture-method}
+\alias{add_observation,}
 \alias{add_observation,multi_online_log_mixture-method}
+\alias{multi_online_log_mixture}
 \title{Add an obseration to a model comparison.
 The function takes as first argument an initialized model comparison, and subsequently
 update the parameters of each model give an observation that is split into y (a 0 or 1 scalar)

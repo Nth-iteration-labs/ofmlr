@@ -154,7 +154,7 @@ setMethod(
 		
 		# Learn rate from Stochastic Variational inference:
 		if(lambda<=0){
-			lambda <- (object@params$n+1000)^-.5
+			lambda <- (object@params$n+1000)^-.55
 		}
 		
 		# M Step:

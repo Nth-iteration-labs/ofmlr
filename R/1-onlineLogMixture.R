@@ -45,7 +45,7 @@ online_log_mixture <- function(
 		k, 
 		beta = matrix(runif(k*p,-2,2),nrow=k), 
 		ak = generate_probability_vector(k), 
-		ll.window = 1000, 
+		ll.window = 100, 
 		trace = FALSE
 	){
 		# Some checks

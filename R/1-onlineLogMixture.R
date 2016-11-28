@@ -43,7 +43,7 @@ setClass("online_log_mixture",
 online_log_mixture <- function(
 		p, 
 		k, 
-		beta = matrix(runif(k*p,-5,5),nrow=k), 
+		beta = matrix(runif(k*p,-1,1),nrow=k), 
 		ak = generate_probability_vector(k), 
 		ll.window = 500, 
 		trace = FALSE

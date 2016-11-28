@@ -4,7 +4,7 @@
 \alias{online_log_mixture}
 \title{Create an S4 object to fit the online logistic mixture model}
 \usage{
-online_log_mixture(p, k, beta = matrix(runif(k * p, -5, 5), nrow = k),
+online_log_mixture(p, k, beta = matrix(runif(k * p, -1, 1), nrow = k),
   ak = generate_probability_vector(k), ll.window = 500, trace = FALSE)
 }
 \arguments{

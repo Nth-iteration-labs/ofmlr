@@ -146,6 +146,7 @@ setMethod(
 		} else {
 			for(i in 1:length(object@models)){
 				summary(object@models[[i]])
+				print("=============================")
 			}	
 		}	
 	})

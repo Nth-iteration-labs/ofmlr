@@ -73,6 +73,7 @@ generate_probability_vector <- function(k){
 #' Utility function to compute an inverse logit
 #' @param x Numeric vector (values between -Inf and Inf)
 #' @return Numberic vector with lenght \code{lenght(x)} with entries between 0 and 1
+#' @export
 inv_logit <- function(x){
 	1/(1+exp(-x))
 }

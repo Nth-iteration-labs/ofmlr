@@ -45,7 +45,7 @@ online_log_mixture <- function(
 		k, 
 		beta = matrix(runif(k*p,-2,2),nrow=k), 
 		ak = generate_probability_vector(k), 
-		ll.window = 1000, 
+		ll.window = 500, 
 		trace = FALSE
 	){
 		# Some checks
@@ -219,10 +219,6 @@ setMethod(
 ll_compute <- function(y, X, beta, ak=1, wk=1){
 	p <- inv_logit(X %*% t(beta)) 
 	lik.comp <- p^y * (1-p)^(1-y)
-	print(ak)
-	print(X %*% t(beta))
-	print(lik.comp)
-	print("+++++++")
 	return(list(ll=log(sum(ak * lik.comp)), maxll=log(lik.comp[which.max(wk)])))
 }
 

@@ -6,7 +6,7 @@
 #' The \code{multi_online_log_mixture} object allows one to fit multiple models in paralel
 #' and compare their outcomes.
 #'
-#' Please see the more extensive documentation and examples under ?online_log_mixture
+#' @seealso Please see the more extensive documentation and examples under \code{\link{online_log_mixture()}}
 #' 
 #' @examples
 #' M1 <- online_log_mixture(3,3, trace=1)
@@ -16,12 +16,7 @@
 #' 	M1 <- add_observation(M2, y, X, 0)
 #' }
 #' plot(M1, params=TRUE)
+#'
 #' @docType package
 #' @name ofmlr
 NULL
-
-
-
-# Simple update:
-# library(devtools)
-# document()

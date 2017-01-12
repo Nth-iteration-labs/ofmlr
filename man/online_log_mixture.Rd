@@ -12,35 +12,38 @@ online_log_mixture(p, k, beta = matrix(runif(k * p, -1, 1), nrow = k),
 
 \item{k}{Number of mixture components}
 
-\item{beta}{A kXp matrix with the true regression coefficients for each mixture component}
+\item{beta}{A $k \times p$ matrix with the true regression coefficients for each mixture component}
 
 \item{ak}{A vector of length k summing to 1 for the mixture probabilties}
 
 \item{ll.window}{The length of the (lagged) mean log-likelihood window}
 
 \item{trace}{Whether or not the parameter estimates and the lagged mean log likelihood should be traced
-can be set to an integer x > 0 and it will store a snapshot every x-th datapoint.
-WARINING: if \code{trace=1} the object grows large very quickly}
+can be set to an integer $x > 0$ and it will store a snapshot every x-th datapoint.
+WARINING: when using \code{trace=1} the object grows large very quickly}
 }
 \value{
 An object of class "online_log_mixture"
 The object contains the following slots:
 \describe{
-   \item{params}{A list containing all the parameters of the model. Contains the objects \code{beta}, \code{Sak}, \code{n}}
-   \item{descriptives}{A list containing the (lagged) mean log-likelihood, the max log-likelihood, and the AIC and BIC approximations}
-   \item{trace}{A list containing the trace of each of the parameters}
+   \item{\code{params}}{A list containing all the parameters of the model. Contains the objects \code{beta}, \code{Sak}, \code{n}}
+   \item{\code{descriptives}}{A list containing the (lagged) mean log-likelihood, the max log-likelihood, and the AIC and BIC approximations}
+   \item{\code{trace}}{A list containing the trace of each of the parameters}
  }
 }
 \description{
 This function allows you to initialize an online logistic regression
 model. After initialization using the model description (in terms of 
 the number of parameters of each logistic regression model and the number
-of mixture components) one can use the \code{add.observation(object, y, X, ...)}
-method to add observations and call the \code{summary()} and \code{plot()}
+of mixture components) one can use the \code{\link{add.observation}}
+method to add observations and call the \code{\link{summary()}} and \code{\link{plot()}}
 methods.
 }
 \examples{
 online_log_mixture(3,2)
 online_log_mixture(2,4, ak=c(.1,.2,.3,.4), trace=100)
+}
+\seealso{
+For more detailed examples see \code{\link{add_observation}}
 }
 

@@ -18,25 +18,26 @@ setClass("online_log_mixture",
 #' This function allows you to initialize an online logistic regression
 #' model. After initialization using the model description (in terms of 
 #' the number of parameters of each logistic regression model and the number
-#' of mixture components) one can use the \code{add.observation(object, y, X, ...)}
-#' method to add observations and call the \code{summary()} and \code{plot()}
+#' of mixture components) one can use the \code{\link{add.observation}}
+#' method to add observations and call the \code{\link{summary()}} and \code{\link{plot()}}
 #' methods.
 #'
 #' @param p Number of predictors for each logistic regression model
 #' @param k Number of mixture components
-#' @param beta A kXp matrix with the true regression coefficients for each mixture component
+#' @param beta A $k \times p$ matrix with the true regression coefficients for each mixture component
 #' @param ak A vector of length k summing to 1 for the mixture probabilties
 #' @param ll.window The length of the (lagged) mean log-likelihood window
 #' @param trace Whether or not the parameter estimates and the lagged mean log likelihood should be traced
-#' can be set to an integer x > 0 and it will store a snapshot every x-th datapoint.
-#' WARINING: if \code{trace=1} the object grows large very quickly
+#' can be set to an integer $x > 0$ and it will store a snapshot every x-th datapoint.
+#' WARINING: when using \code{trace=1} the object grows large very quickly
+#' @seealso For more detailed examples see \code{\link{add_observation}}
 #' @export
 #' @return An object of class "online_log_mixture"
 #' The object contains the following slots:
 #' \describe{
-#'    \item{params}{A list containing all the parameters of the model. Contains the objects \code{beta}, \code{Sak}, \code{n}}
-#'    \item{descriptives}{A list containing the (lagged) mean log-likelihood, the max log-likelihood, and the AIC and BIC approximations}
-#'    \item{trace}{A list containing the trace of each of the parameters}
+#'    \item{\code{params}}{A list containing all the parameters of the model. Contains the objects \code{beta}, \code{Sak}, \code{n}}
+#'    \item{\code{descriptives}}{A list containing the (lagged) mean log-likelihood, the max log-likelihood, and the AIC and BIC approximations}
+#'    \item{\code{trace}}{A list containing the trace of each of the parameters}
 #'  }
 #' @examples
 #' online_log_mixture(3,2)
@@ -88,7 +89,7 @@ online_log_mixture <- function(
 
 #' Add an observation
 #'	
-#' Generic for adding observations.
+#' Generic function for adding observations.
 #' @name add_observation
 #' @rdname add_observation-methods
 #' @exportMethod add_observation
@@ -99,8 +100,8 @@ setGeneric(
 
 #' Method to add an observation to an online logistic regression model
 #'
-#' The function takes as first argument an initialize model, and subsequently
-#' update the parameters give an observation that is split into y (a 0 or 1 scalar)
+#' The function takes as first argument an initialized model (or a collection of models), and subsequently
+#' updates the parameters given an observation that is split into y (a 0 or 1 scalar)
 #' and a vector X containing the features. Note that the lenght of X needs to match
 #' the dimensions of the parameters of the current model.
 #' @param object An object of type online_log_mixture
@@ -211,7 +212,7 @@ setMethod(
 #'
 #' @param y A scalar with value 0 or 1; the dependent variable
 #' @param X The feature vector of the current observation
-#' @param beta A kXp matrix with the true regression coefficients for each mixture component
+#' @param beta A $k \times p$ matrix with the true regression coefficients for each mixture component
 #' @param ak A vector of length k summing to 1 for the mixture probabilties
 #' @param wk The mixture weights (posterior probablity of the data point for each component)
 #' 
@@ -275,6 +276,8 @@ setMethod(
 #' }
 #' plot(M2, params=TRUE)
 #'
+#' @rdname plot-methods
+#' @aliases plot, ANY-method
 setMethod(
 	f = "plot",
 	signature = c(x="online_log_mixture",y="missing"),

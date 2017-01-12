@@ -2,11 +2,7 @@
 % Please edit documentation in R/0-utils.R
 \name{generate_mixture}
 \alias{generate_mixture}
-\title{mixtures of logistic regression models. The main workhorse \code{online_log_mixture()} 
-and its utility functions (such as \code{add_observation()} can be used to fit a model. 
-The \code{multi_online_log_mixture} object allows one to fit multiple models in paralel
-and compare their outcomes.
-Generate a mixture dataset}
+\title{Generate a mixture dataset}
 \usage{
 generate_mixture(n, p, k, beta = matrix(runif(k * p, -2, 2), nrow = k),
   ak = generate_probability_vector(k))

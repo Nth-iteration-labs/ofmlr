@@ -2,6 +2,8 @@
 % Please edit documentation in R/2-multiMixture.R
 \docType{methods}
 \name{add_model,multi_online_log_mixture-method}
+\alias{ANY-method}
+\alias{add_model,}
 \alias{add_model,multi_online_log_mixture-method}
 \title{Method to add an online_log_mixture model}
 \usage{

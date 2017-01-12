@@ -57,6 +57,8 @@ multi_online_log_mixture <- function(model){
 #' models <- multi_online_log_mixture(M1)
 #' models <- add_model(models, online_log_mixture(2,2,trace=10))
 #'
+#' @rdname add_model-methods
+#' @aliases add_model, ANY-method
 setMethod(
 	f="add_model",
 	signature = "multi_online_log_mixture",
@@ -123,6 +125,8 @@ setMethod(
 #' summary(models)
 #' @export
 #' 
+#' @rdname summary-methods
+#' @aliases summary, ANY-method
 setMethod(
 	f="summary",
 	signature = "multi_online_log_mixture",
@@ -176,6 +180,8 @@ setMethod(
 #' models <- add_observation(models, 1, c(2,-3))
 #' plot(models, params=TRUE)
 #'
+#' @rdname plot-methods
+#' @aliases plot, ANY-method
 setMethod(
 	f = "plot",
 	signature = c(x="multi_online_log_mixture",y="missing"),

@@ -17,16 +17,16 @@ and compare their outcomes.
 Next to standards like \code{plot} and \code{summary} the package implements
 the folling functions
 \itemize{
-	\item \code{link{online_log_mixture}}: Constructor for new ofmlr object.
-\item \code{link{multi_online_log_mixture}}: Constructor for an object containing multiple ofmlr models.
-\item \code{link{add_model}}: Add additional models to a multi_online_log_mixture object.
-\item \code{link{add_observation}}: Add observations to a model and update parameters
+	\item \code{\link{online_log_mixture}}: Constructor for new ofmlr object.
+\item \code{\link{multi_online_log_mixture}}: Constructor for an object containing multiple ofmlr models.
+\item \code{\link{add_model}}: Add additional models to a multi_online_log_mixture object.
+\item \code{\link{add_observation}}: Add observations to a model and update parameters
 }
 The package also contains the following utility functions:
 \itemize{
-\item \code{link{generate_mixture}}: 
-\item \code{link{generate_probabilty_vector}}: 
-\item \code{link{inv_logit}}: 
+\item \code{\link{generate_mixture}}: Utility function to create a mixture dataset.
+\item \code{\link{generate_probabilty_vector}}: Function to create a probablity vector.
+\item \code{\link{inv_logit}}: The inverse logit function.
 }
 }
 \examples{

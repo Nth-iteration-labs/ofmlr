@@ -40,10 +40,10 @@ An updated object of type online_log_mixture
 An updated object of type multi_online_log_mixture
 }
 \description{
-Generic for adding observations.
+Generic function for adding observations.
 
-The function takes as first argument an initialize model, and subsequently
-update the parameters give an observation that is split into y (a 0 or 1 scalar)
+The function takes as first argument an initialized model (or a collection of models), and subsequently
+updates the parameters given an observation that is split into y (a 0 or 1 scalar)
 and a vector X containing the features. Note that the lenght of X needs to match
 the dimensions of the parameters of the current model.
 

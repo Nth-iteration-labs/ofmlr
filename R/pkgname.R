@@ -1,4 +1,4 @@
-#' Fit online finite mixtures of logistic regression models
+#' Fit online finite mixtures of logistic regression models.
 #'
 #’ The ofmlr package allows one to fit, online (or in a data stream) multiple finite 
 #' mixtures of logistic regression models in parallel. The main workhorse \code{online_log_mixture()} 
@@ -18,3 +18,6 @@
 #' plot(M1, params=TRUE)
 #'
 "_PACKAGE"
+#> [1] "_PACKAGE"
+
+# document()

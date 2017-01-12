@@ -12,6 +12,7 @@ setClass("online_log_mixture",
 		)
 	)
 	
+	
 #' Create an S4 object to fit the online logistic mixture model
 #'
 #' This function allows you to initialize an online logistic regression
@@ -230,6 +231,8 @@ ll_compute <- function(y, X, beta, ak=1, wk=1){
 #' @param object The fitted model
 #' @return Nothing
 #' @export
+#' @rdname summary-methods
+#' @aliases summary, ANY-method
 setMethod(
 	f="summary",
 	signature = "online_log_mixture",

@@ -42,7 +42,7 @@ multi_online_log_mixture <- function(model){
 	new("multi_online_log_mixture", models=models)
 }
 
-#' Method to add a online_log_mixture model
+#' Method to add an online_log_mixture model
 #' 
 #' Add multiple models to a model comparison object
 #' using the add_model function. Note that for all models
@@ -69,7 +69,10 @@ setMethod(
 		return(object)
 	})
 
+
+
 #' Add an obseration to a model comparison.
+#' 
 #' The function takes as first argument an initialized model comparison, and subsequently
 #' update the parameters of each model give an observation that is split into y (a 0 or 1 scalar)
 #' and a vector X containing the features. Note that the lenght of X needs to match
@@ -86,7 +89,9 @@ setMethod(
 #' models <- add_model(models, online_log_mixture(2,2))
 #' models <- add_observation(models, 1, c(2,-3))
 #'
-#' @aliases add_observation, multi_online_log_mixture
+#' @return An updated object of type multi_online_log_mixture
+#' @rdname add_observation-methods
+#' @aliases add_observation, ANY-method
 setMethod(
 	f="add_observation",
 	signature = "multi_online_log_mixture",

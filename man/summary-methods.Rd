@@ -2,6 +2,8 @@
 % Please edit documentation in R/1-onlineLogMixture.R
 \docType{methods}
 \name{summary,online_log_mixture-method}
+\alias{ANY-method}
+\alias{summary,}
 \alias{summary,online_log_mixture-method}
 \title{Summary method for the online_log_mixture class}
 \usage{

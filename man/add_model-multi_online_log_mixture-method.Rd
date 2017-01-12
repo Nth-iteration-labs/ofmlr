@@ -3,7 +3,7 @@
 \docType{methods}
 \name{add_model,multi_online_log_mixture-method}
 \alias{add_model,multi_online_log_mixture-method}
-\title{Method to add a online_log_mixture model}
+\title{Method to add an online_log_mixture model}
 \usage{
 \S4method{add_model}{multi_online_log_mixture}(object, model)
 }

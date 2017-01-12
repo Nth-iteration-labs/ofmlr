@@ -56,11 +56,13 @@ for(i in 1:10000){
 }
 plot(M2, params=TRUE)
 
-M1 <- online_log_mixture(2,1)
+M1 <- online_log_mixture(2,1, trace=1)
 models <- multi_online_log_mixture(M1)
-models <- add_model(models, online_log_mixture(2,2))
-models <- add_observation(models, 1, c(2,-3))
-plot(models, params=TRUE)
+models <- add_model(models, online_log_mixture(2,2, trace=1))
+for(i in c(1:100)){
+models <- add_observation(models, rbinom(1,1,.5), rnorm(2,0,1))
+}
+plot(models, params=TRUE, omit=0)
 
 }
 

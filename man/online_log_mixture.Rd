@@ -14,12 +14,12 @@ online_log_mixture(p, k, beta = matrix(runif(k * p, -1, 1), nrow = k),
 
 \item{beta}{A $k \times p$ matrix with the true regression coefficients for each mixture component}
 
-\item{ak}{A vector of length k summing to 1 for the mixture probabilties}
+\item{ak}{A vector of length $k$ summing to 1 for the mixture probabilties}
 
 \item{ll.window}{The length of the (lagged) mean log-likelihood window}
 
 \item{trace}{Whether or not the parameter estimates and the lagged mean log likelihood should be traced
-can be set to an integer $x > 0$ and it will store a snapshot every x-th datapoint.
+can be set to an integer, $x > 0$, and it will store a snapshot every x-th datapoint.
 WARINING: when using \code{trace=1} the object grows large very quickly}
 }
 \value{
@@ -33,10 +33,10 @@ The object contains the following slots:
 }
 \description{
 This function allows you to initialize an online logistic regression
-model. After initialization using the model description (in terms of 
-the number of parameters of each logistic regression model and the number
-of mixture components) one can use the \code{\link{add.observation}}
-method to add observations and call the \code{\link{summary()}} and \code{\link{plot()}}
+model. After initialization by providing the model description (in terms of 
+the number of predictors $p$ of each logistic regression model and the number
+of mixture components $k$) one can use the \code{\link{add.observation}}
+method to add observations and update the parameters and call the \code{\link{summary()}} and \code{\link{plot()}}
 methods.
 }
 \examples{

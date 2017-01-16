@@ -1,12 +1,12 @@
 #' Generate a mixture dataset
 #'
-#' This function creates a dataset with n rows, p predictors and k classes,
+#' This function creates a dataset with $n$ rows, $p$ predictors and $k$ classes,
 #' for simulation of a mixture or logisitc regression models.
 #' 
 #' @param n Number of observations
 #' @param p Number of predictors for each individual logistic regression model
 #' @param k Number of classes
-#' @param beta A kXp matrix with the true regression coefficients for each mixture component
+#' @param beta A $k \times p$ matrix with the true regression coefficients for each mixture component
 #' @param ak A vector of length k summing to 1 for the mixture probabilties
 #' @keywords generate logistic mixture
 #' @export
@@ -52,7 +52,7 @@ generate_mixture <- function(
 
 #' Genererate a probablity vector
 #'
-#' Utility function to generate a probalbity vector of specific lenght
+#' Utility function to generate a probability vector of specific length
 #' @param k Number of components
 #' @return Vector of lenght \code{k} with random entries that sum to 1
 #' @export

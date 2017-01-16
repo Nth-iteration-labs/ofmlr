@@ -13,6 +13,6 @@ generate_probability_vector(k)
 Vector of lenght \code{k} with random entries that sum to 1
 }
 \description{
-Utility function to generate a probalbity vector of specific lenght
+Utility function to generate a probability vector of specific length
 }
 

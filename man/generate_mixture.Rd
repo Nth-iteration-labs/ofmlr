@@ -14,7 +14,7 @@ generate_mixture(n, p, k, beta = matrix(runif(k * p, -2, 2), nrow = k),
 
 \item{k}{Number of classes}
 
-\item{beta}{A kXp matrix with the true regression coefficients for each mixture component}
+\item{beta}{A $k \times p$ matrix with the true regression coefficients for each mixture component}
 
 \item{ak}{A vector of length k summing to 1 for the mixture probabilties}
 }
@@ -23,7 +23,7 @@ A list containing slots \code{data} and \code{params} containing the
 simulated data and the true parameters respectively
 }
 \description{
-This function creates a dataset with n rows, p predictors and k classes,
+This function creates a dataset with $n$ rows, $p$ predictors and $k$ classes,
 for simulation of a mixture or logisitc regression models.
 }
 \examples{

@@ -16,19 +16,19 @@ setClass("online_log_mixture",
 #' Create an S4 object to fit the online logistic mixture model
 #'
 #' This function allows you to initialize an online logistic regression
-#' model. After initialization using the model description (in terms of 
-#' the number of parameters of each logistic regression model and the number
-#' of mixture components) one can use the \code{\link{add.observation}}
-#' method to add observations and call the \code{\link{summary()}} and \code{\link{plot()}}
+#' model. After initialization by providing the model description (in terms of 
+#' the number of predictors $p$ of each logistic regression model and the number
+#' of mixture components $k$) one can use the \code{\link{add.observation}}
+#' method to add observations and update the parameters and call the \code{\link{summary()}} and \code{\link{plot()}}
 #' methods.
 #'
 #' @param p Number of predictors for each logistic regression model
 #' @param k Number of mixture components
 #' @param beta A $k \times p$ matrix with the true regression coefficients for each mixture component
-#' @param ak A vector of length k summing to 1 for the mixture probabilties
+#' @param ak A vector of length $k$ summing to 1 for the mixture probabilties
 #' @param ll.window The length of the (lagged) mean log-likelihood window
 #' @param trace Whether or not the parameter estimates and the lagged mean log likelihood should be traced
-#' can be set to an integer $x > 0$ and it will store a snapshot every x-th datapoint.
+#' can be set to an integer, $x > 0$, and it will store a snapshot every x-th datapoint.
 #' WARINING: when using \code{trace=1} the object grows large very quickly
 #' @seealso For more detailed examples see \code{\link{add_observation}}
 #' @export

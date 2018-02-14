@@ -228,7 +228,7 @@ setMethod(
 		par(mfrow=c(1,1))
 		
 		# Range:
-		y <- sapply(object@models[[i]]@trace$descriptives, function(x, s=statistic, omit=omit){x[[s]]})[-c(1:omit)]
+		y <- sapply(object@models[[1]]@trace$descriptives, function(x, s=statistic, omit=omit){x[[s]]})[-c(1:omit)]
 		
 		plot(1, type="n", xlim=c(0, length(object@models[[1]]@trace$ak)), ylim=c(min(y), max(y)), ylab=statistic, xlab="")
 		for(i in 1:length(object@models)){

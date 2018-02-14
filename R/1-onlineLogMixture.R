@@ -286,7 +286,9 @@ setMethod(
 		# Some Checks
 		if(!x@trace$trace){
 			stop("No trace enabled for the current model. Nothing to plot")
-		} 
+		}
+		
+		print("NEW!") 
 
 		if(x@params$n < omit+1){
 			stop("Omitting more than the number of datapoints in the stream")

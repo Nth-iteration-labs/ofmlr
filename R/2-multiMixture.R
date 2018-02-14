@@ -222,7 +222,7 @@ setMethod(
 setMethod(
 	f = "compare_plot",
 	signature = "multi_online_log_mixture",
-	definition = function(object, statistic="ll", omit=0,...){
+	definition = function(object, statistic="ll", omit=0, ...){
 
 		# Plot each model's statistic over time
 		par(mfrow=c(1,1))
@@ -233,6 +233,14 @@ setMethod(
 		plot(1, type="n", xlim=c(0, length(object@models[[1]]@trace$ak)), ylim=c(min(y), max(y)), ylab=statistic, xlab="")
 		for(i in 1:length(object@models)){
 			y <- sapply(object@models[[i]]@trace$descriptives, function(x, s=statistic, omit=omit){x[[s]]})[-c(1:omit)]
-			lines(y, col=i)
+			lines(y, col=i, type="l")
 		}
+		
+		# Legend:
+		legend <- c()
+		for(i in 1:length(object@models)){
+			m <- object@models[[i]]
+			legend <- c(legend, paste("Model ",i, " (",m@params$k," components, ", ncol(m@params$beta), " params)", sep=""))
+		}
+		legend(1, max(y), legend=legend, col=c(1:length(legend)), lty=1:2, cex=0.8)
 	})

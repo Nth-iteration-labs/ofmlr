@@ -229,8 +229,15 @@ setMethod(
 		
 		# Range:
 		y <- sapply(object@models[[1]]@trace$descriptives, function(x, s=statistic, omit=omit){x[[s]]})[-c(1:omit)]
+		min <- min(y)
+		max <- max(y)
+		for(i in 2:length(object@models)){
+			y <- sapply(object@models[[i]]@trace$descriptives, function(x, s=statistic, omit=omit){x[[s]]})[-c(1:omit)]
+			if(min(y)<min){min<-min(y)}
+			if(max(y)>max){max<-max(y)}
+		}
 		
-		plot(1, type="n", xlim=c(0, length(object@models[[1]]@trace$ak)), ylim=c(min(y), max(y)), ylab=statistic, xlab="")
+		plot(1, type="n", xlim=c(0, length(object@models[[1]]@trace$ak)), ylim=c(min, max), ylab=statistic, xlab="")
 		for(i in 1:length(object@models)){
 			y <- sapply(object@models[[i]]@trace$descriptives, function(x, s=statistic, omit=omit){x[[s]]})[-c(1:omit)]
 			lines(y, col=i, type="l")

@@ -4,10 +4,18 @@ setClass("multi_online_log_mixture",
 	prototype(models=list())
 	)
 
+## Add models
 if(!isGeneric("add_model")){
 	setGeneric(
 		name = "add_model",
 		def = function(object, model, model.list){standardGeneric("add_model")})
+	}
+
+## Compare models (AIC or BIC)
+if(!isGeneric("compare_plot")){
+	setGeneric(
+		name = "compare_plot",
+		def = function(object, ...){standardGeneric("compare_plot")})
 	}
 
 #' Initialize model comparison 
@@ -198,3 +206,28 @@ setMethod(
 		}
 	})
 
+
+
+#' Comparison plot method for the mult_online_log_mixture class
+#'
+#' Will create a plot comparing the (s)AIC or (s)BIC values of the 
+#' models during a data stream.
+#' 
+#' @param x An object of type multi_online_log_mixture
+#' @param statistic String, indicating usage of AIC or BIC
+#' @export
+#'
+#' @rdname compare_plot-methods
+#' @aliases compare_plot, ANY-method
+setMethod(
+	f = "compare_plot",
+	signature = "multi_online_log_mixture",
+	definition = function(object, statistic="AIC", ...){
+
+		# Plot each model's statistic over time
+		plot(1, type="n", xlim=c(0, length(object@models[[1]]@trace$ak)), ylim=c(0, 1), ylab=statistic, xlab="")
+		for(i in 1:length(object@models)){
+			y <- sapply(object@models[[i]]@trace$get(statistic), function(x, i){x[i]}, i=i)
+			lines(y, col=i)
+		}
+	})

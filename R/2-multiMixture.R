@@ -210,7 +210,7 @@ setMethod(
 
 #' Comparison plot method for the mult_online_log_mixture class
 #'
-#' Will create a plot comparing the (s)AIC or (s)BIC values of the 
+#' Will create a plot comparing the log likelihood (ll, default), (s)AIC or (s)BIC values of the 
 #' models during a data stream.
 #' 
 #' @param x An object of type multi_online_log_mixture
@@ -222,12 +222,17 @@ setMethod(
 setMethod(
 	f = "compare_plot",
 	signature = "multi_online_log_mixture",
-	definition = function(object, statistic="AIC", ...){
+	definition = function(object, statistic="ll", omit=0,...){
 
 		# Plot each model's statistic over time
-		plot(1, type="n", xlim=c(0, length(object@models[[1]]@trace$ak)), ylim=c(0, 1), ylab=statistic, xlab="")
+		par(mfrow=c(1,1))
+		
+		# Range:
+		y <- sapply(object@models[[i]]@trace$descriptives, function(x, s=statistic, omit=omit){x[[s]]})[-c(1:omit)]
+		
+		plot(1, type="n", xlim=c(0, length(object@models[[1]]@trace$ak)), ylim=c(min(y), max(y)), ylab=statistic, xlab="")
 		for(i in 1:length(object@models)){
-			y <- sapply(object@models[[i]]@trace$get(statistic), function(x, i){x[i]}, i=i)
+			y <- sapply(object@models[[i]]@trace$descriptives, function(x, s=statistic, omit=omit){x[[s]]})[-c(1:omit)]
 			lines(y, col=i)
 		}
 	})

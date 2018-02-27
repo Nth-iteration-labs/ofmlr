@@ -222,8 +222,8 @@ ll_compute <- function(y, X, beta, ak=1, wk=1){
 	p <- inv_logit(X %*% t(beta)) 
 	lik.comp <- p^y * (1-p)^(1-y)
 	return(
-		list(maxll=log(sum(ak * lik.comp)), 
-			 ll=log(lik.comp[which.max(wk)]))
+		list(ll=log(sum(ak * lik.comp)), 
+			 maxll=log(lik.comp[which.max(wk)]))
 			)
 }
 

@@ -11,3 +11,5 @@ library(ofmlr)
 and you should be ready to go. If the first line fails you will obviously have to install the devtools package first.
 
 Let me know if there is anything unclear or not working!
+
+A description of the package and its functionality can be found at: [https://arxiv.org/abs/1802.10529]

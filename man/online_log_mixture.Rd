@@ -12,7 +12,7 @@ online_log_mixture(p, k, beta = matrix(runif(k * p, -1, 1), nrow = k),
 
 \item{k}{Number of mixture components}
 
-\item{beta}{A $k \times p$ matrix with the true regression coefficients for each mixture component}
+\item{beta}{A $k$ by $p$ matrix with the true regression coefficients for each mixture component}
 
 \item{ak}{A vector of length $k$ summing to 1 for the mixture probabilties}
 

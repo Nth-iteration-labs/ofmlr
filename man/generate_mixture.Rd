@@ -14,7 +14,7 @@ generate_mixture(n, p, k, beta = matrix(runif(k * p, -2, 2), nrow = k),
 
 \item{k}{Number of classes}
 
-\item{beta}{A $k \times p$ matrix with the true regression coefficients for each mixture component}
+\item{beta}{A $k$ by $p$ matrix with the true regression coefficients for each mixture component}
 
 \item{ak}{A vector of length k summing to 1 for the mixture probabilties}
 }

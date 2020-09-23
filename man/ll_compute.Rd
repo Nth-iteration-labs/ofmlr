@@ -11,7 +11,7 @@ ll_compute(y, X, beta, ak = 1, wk = 1)
 
 \item{X}{The feature vector of the current observation}
 
-\item{beta}{A $k \times p$ matrix with the true regression coefficients for each mixture component}
+\item{beta}{A $k$ by $p$ matrix with the true regression coefficients for each mixture component}
 
 \item{ak}{A vector of length k summing to 1 for the mixture probabilties}
 
